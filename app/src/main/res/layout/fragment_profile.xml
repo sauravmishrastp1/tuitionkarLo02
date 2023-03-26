@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.profile.ProfileFragment">>
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:id="@+id/layoutParemt"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".view.activity.ProfileActivity">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="56dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="16dp">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profileImage_iV"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/defaultpic"
+                        app:civ_border_color="@color/light_grey_blue"
+                        app:civ_border_width="4dp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        app:cardBackgroundColor="@color/backgnd"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="0dp">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:src="@color/bg_gray" />
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_camera_alt_black_24dp" />
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </RelativeLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_margin="16dp"
+                    android:paddingStart="6dp"
+                    android:theme="@style/TextLabel">
+
+                    <EditText
+                        android:id="@+id/nameProfile_eT"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Full Name"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/main_sub_header" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="18dp"
+                    android:layout_marginRight="18dp"
+                    android:text="GENDER"
+                    android:visibility="gone"
+                    android:textColor="@color/dark_grey"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/genderProfile_rG"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/male_rB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MALE"
+                        android:textColor="@color/dark_grey" />
+
+                    <RadioButton
+                        android:id="@+id/female_rB"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:text="FEMALE"
+                        android:textColor="@color/dark_grey" />
+
+                </RadioGroup>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_margin="16dp"
+                    android:paddingStart="6dp"
+                    android:theme="@style/TextLabel">
+
+                    <EditText
+                        android:id="@+id/emailProfile_eT"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Email Address"
+                        android:enabled="false"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/main_sub_header" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:paddingStart="6dp"
+                    android:theme="@style/TextLabel">
+
+                    <EditText
+                        android:id="@+id/phoneProfile_eT"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Phone Number"
+                        android:inputType="phone"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/main_sub_header" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:paddingStart="6dp"
+                    android:theme="@style/TextLabel">
+
+                    <EditText
+                        android:id="@+id/countryProfile_eT"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Country"
+                        android:paddingStart="10dp"
+                        android:drawableEnd="@drawable/baseline_arrow_drop_down_24"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/main_sub_header" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:id="@+id/rvCountry"
+                    android:elevation="6dp"
+                    android:visibility="gone"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="vertical"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_height="wrap_content"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:paddingStart="6dp"
+                    android:theme="@style/TextLabel">
+
+                    <EditText
+                        android:id="@+id/stateProfile_eT"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="State"
+                        android:paddingStart="10dp"
+                        android:drawableEnd="@drawable/baseline_arrow_drop_down_24"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/main_sub_header" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:id="@+id/rvState"
+                    android:elevation="6dp"
+                    android:layout_marginLeft="16dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="16dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="vertical"
+
+                    android:layout_height="wrap_content"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:paddingStart="6dp"
+                    android:theme="@style/TextLabel">
+
+                    <EditText
+                        android:id="@+id/cityProfile_eT"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="City"
+                        android:paddingStart="10dp"
+                        android:drawableEnd="@drawable/baseline_arrow_drop_down_24"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/main_sub_header" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:id="@+id/layoutOtherCity"
+                    android:layout_height="56dp"
+                    android:layout_marginLeft="16dp"
+                    android:visibility="gone"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:paddingStart="6dp"
+                    android:theme="@style/TextLabel">
+
+                    <EditText
+                        android:id="@+id/cityOther_eT"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Other City"
+                        android:paddingStart="10dp"
+                        android:inputType="textEmailAddress"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/main_sub_header" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:id="@+id/rvCity"
+                    android:elevation="6dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content"/>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:paddingStart="6dp"
+                    android:theme="@style/TextLabel">
+
+                    <EditText
+                        android:id="@+id/dobEt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Date of Birth"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/main_sub_header" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:paddingStart="6dp"
+                    android:theme="@style/TextLabel">
+
+                    <EditText
+                        android:id="@+id/industryType"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Industry"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/main_sub_header" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:paddingStart="6dp"
+                    android:theme="@style/TextLabel">
+
+                    <EditText
+                        android:id="@+id/jobTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Job Title"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/main_sub_header" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:paddingStart="6dp"
+                    android:theme="@style/TextLabel">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/totalExperience"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Total Experience"
+                        android:paddingStart="10dp"
+                        android:drawableEnd="@drawable/baseline_arrow_drop_down_24"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/main_sub_header" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:paddingStart="6dp"
+                    android:theme="@style/TextLabel">
+
+                    <EditText
+                        android:id="@+id/highestQualification"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Highest Qualification"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/main_sub_header" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:paddingStart="6dp"
+                    android:theme="@style/TextLabel">
+
+                    <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/currentSalaryMonth"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint=" Current Salary/Month"
+                        android:paddingStart="10dp"
+                        android:drawableEnd="@drawable/baseline_arrow_drop_down_24"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/main_sub_header" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:paddingStart="6dp"
+                    android:theme="@style/TextLabel">
+
+                    <EditText
+                        android:id="@+id/completeAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Complete Address"
+                        android:textColor="@color/dark_grey"
+                        android:textSize="@dimen/main_sub_header" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_margin="16dp"
+                    android:layout_marginRight="16dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            app:cardCornerRadius="10dp"
+                            android:layout_margin="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_height="100dp">
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="match_parent"
+                                android:id="@+id/imgaadhar"
+                                android:src="@drawable/baseline_cloud_upload_24"
+                                android:layout_height="match_parent"/>
+
+                        </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/uploadAadhar_jobForm"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginRight="2dp"
+                            android:background="@color/colorAccent"
+                            android:gravity="center"
+                            android:padding="6dp"
+                            android:text="Update Aadhar Card*"
+                            android:textAllCaps="true"
+                            android:textColor="@color/light_grey_blue"
+                            android:textSize="@dimen/item_text_size"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content">
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="match_parent"
+                            app:cardCornerRadius="10dp"
+                            android:layout_margin="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_height="100dp">
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="match_parent"
+                                android:id="@+id/imgresume"
+                                android:src="@drawable/baseline_cloud_upload_24"
+                                android:layout_height="match_parent"/>
+
+                        </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/uploadMark_jobForm"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_marginLeft="2dp"
+                            android:background="@color/colorAccent"
+                            android:gravity="center"
+                            android:padding="6dp"
+                            android:text="Update Resume"
+                            android:textAllCaps="true"
+                            android:textColor="@color/light_grey_blue"
+                            android:textSize="@dimen/item_text_size"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="96dp"/>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/profileSave"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="SAVE CHANGES"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/main_header"
+            android:textStyle="bold" />
+
+        <ProgressBar
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_centerInParent="true"
+            android:id="@+id/profileProgress"
+            android:visibility="gone"/>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:id="@+id/layoutLocation"
+            android:layout_margin="10dp"
+            android:layout_centerInParent="true"
+            app:cardBackgroundColor="#AEADAC"
+            android:visibility="gone"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="10dp"
+            android:elevation="6dp">
+            <LinearLayout
+                android:background="@color/white"
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:orientation="vertical"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/purple_200"
+                    android:layout_height="wrap_content">
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="30dp"
+                        android:id="@+id/cross"
+                        android:layout_gravity="end"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginTop="10dp"
+                        android:tint="@color/white"
+                        android:src="@drawable/baseline_clear_24"
+                        android:layout_height="30dp"/>
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:id="@+id/tvLocation"
+                        android:text="----Select Country---"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:layout_marginBottom="10dp"
+                        android:textColor="@color/white"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="wrap_content"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:id="@+id/layoutCountry"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="16dp"
+                        android:background="@color/white"
+                        android:layout_marginRight="16dp"
+                        android:padding="1dp"
+                        android:layout_marginBottom="10dp"
+                        android:theme="@style/TextLabel">
+
+                        <EditText
+                            android:id="@+id/searchKeyWordCountry"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="Search"
+                            android:layout_marginEnd="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/main_sub_header" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:id="@+id/layoutState"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="16dp"
+                        android:background="@color/white"
+                        android:layout_marginRight="16dp"
+                        android:padding="1dp"
+                        android:layout_marginBottom="10dp"
+                        android:theme="@style/TextLabel">
+
+                        <EditText
+                            android:id="@+id/searchKeyWordState"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="Search"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/main_sub_header" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:id="@+id/layoutCity"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="16dp"
+                        android:background="@color/white"
+                        android:padding="1dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="10dp"
+                        android:theme="@style/TextLabel">
+
+                        <EditText
+                            android:id="@+id/searchKeyWordCity"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="Search"
+                            android:textColor="@color/dark_grey"
+                            android:textSize="@dimen/main_sub_header" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:id="@+id/rvCountry1"
+                    android:layout_margin="5dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:id="@+id/rvState1"
+                    android:layout_margin="5dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content"/>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:id="@+id/rvCity1"
+                    android:layout_margin="5dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
