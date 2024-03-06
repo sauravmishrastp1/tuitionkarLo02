@@ -10,6 +10,7 @@ import com.data.remote.baseApi.DataRepository.Companion.IMAGE_BASE_URL
 import com.data.responseModel.JobList
 import com.google.gson.Gson
 import com.tklpvtltd.LoginActivity
+import com.tklpvtltd.MainActivity
 import com.tklpvtltd.MainViewModel
 import com.tklpvtltd.R
 import com.tklpvtltd.databinding.ActivityJobDetailsBinding
@@ -23,6 +24,9 @@ class ActivityJobDetails : AppCompatActivity() {
     private lateinit var binding: ActivityJobDetailsBinding
     private val mainViewModel by viewModel<MainViewModel>()
     private var appliedJobList = ArrayList<JobList>()
+    companion object{
+        var goToSuscriptionPlac:GoToSuscriptionPlac?=null
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -71,14 +75,22 @@ class ActivityJobDetails : AppCompatActivity() {
 
             binding.jobExpDetail.loadData(it.body()!!.jobDetail.requirement,"","");
             binding.jobExpDetail.settings.javaScriptEnabled = true
+            try {
+                binding.jobLocDetail.loadData(it.body()!!.jobDetail.cityName.replace("[","").replace("]",""),"","");
+                binding.Location.setText(Html.fromHtml(Html.fromHtml(it.body()!!.jobDetail.cityName.replace("[","").replace("]",""),).toString()));
 
-            binding.jobLocDetail.loadData(it.body()!!.jobDetail.cityName.replace("[","").replace("]",""),"","");
+            }catch (e:Exception){
+
+            }
             binding.jobLocDetail.settings.javaScriptEnabled = true
            // binding.jobDescDetail.text = Html.fromHtml(Html.fromHtml(it.body()!!.jobDetail.description).toString())
 //            binding.jobExpDetail.text = Html.fromHtml(Html.fromHtml(it.body()!!.jobDetail.requirement).toString())
             binding.jobSalaryDetail.text = it.body()!!.jobDetail.salary+"/Month"
 //            binding.jobLocDetail.text = Html.fromHtml(Html.fromHtml(it.body()!!.jobDetail.cityName).toString().replace("[","").replace("]",""))
-            binding.Location.text = Html.fromHtml(Html.fromHtml(it.body()!!.jobDetail.jobLocation).toString().replace("[","").replace("]",""))
+//            binding.Location.text = Html.fromHtml(Html.fromHtml(it.body()!!.jobDetail.jobLocation).toString().replace("[","").replace("]",""))
+
+//            binding.Location.loadData(it.body()!!.jobDetail.cityName.replace("[","").replace("]",""),"","");
+//            binding.Location.settings.javaScriptEnabled = true
 
             binding.Experience.text = it.body()!!.jobDetail.experienceNeeded
             binding.postedDate.text = it.body()!!.jobDetail.date
@@ -113,6 +125,14 @@ class ActivityJobDetails : AppCompatActivity() {
         alertDialog.setButton(
             AlertDialog.BUTTON_POSITIVE, "OK"
         ) { dialog, which ->
+            startActivity(Intent(this,MainActivity::class.java).let {
+                it.putExtra("type","Paytment")
+            })
+            finish()
+
+//            goToSuscriptionPlac!!.goToFragment()
+
+
             dialog.dismiss()
 
         }
@@ -120,5 +140,9 @@ class ActivityJobDetails : AppCompatActivity() {
 
     }
 
+
+}
+interface GoToSuscriptionPlac{
+    fun goToFragment()
 
 }

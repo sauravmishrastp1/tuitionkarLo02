@@ -14,6 +14,7 @@ import com.tklpvtltd.databinding.LayouSuscribtionPlanItemBinding
 
 class SubscriptionAdapter(val callBackBuy: CallBackBuy) : RecyclerView.Adapter<SubscriptionAdapter.WalletViewHolder>() {
     private var list = mutableListOf<OurPlan>()
+    private var note =""
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WalletViewHolder {
         val binding =
             LayouSuscribtionPlanItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -23,7 +24,8 @@ class SubscriptionAdapter(val callBackBuy: CallBackBuy) : RecyclerView.Adapter<S
     override fun onBindViewHolder(holder: WalletViewHolder, position: Int) {
          holder.setData(position)
     }
-    fun setData(jobList: MutableList<OurPlan>){
+    fun setData(jobList: MutableList<OurPlan>,note:String){
+        this.note = note
         this.list = jobList
     }
 
@@ -38,6 +40,9 @@ class SubscriptionAdapter(val callBackBuy: CallBackBuy) : RecyclerView.Adapter<S
            binding.tvPlanName.text = list[position].name
            binding.tvPrice.text = list[position].price+"/Year"
             binding.tvPurchase.text = list[position].planHistory
+            if(list[position].planHistory=="Active Plan"){
+                binding.tvPlanActiveDuration.text = note
+            }
 //           binding.content1.text = list[position].content
 //            binding.content1.text = Html.fromHtml(Html.fromHtml(list[position].content).toString())
             binding.weview.loadData(list[position].content,"","");

@@ -1,5 +1,6 @@
 package com.data.remote.baseApi
 
+import android.util.Log
 import com.data.responseModel.*
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
@@ -167,6 +168,7 @@ class DataRepository constructor(private var api: Api) : Repository {
 
     override suspend fun getOrderId(userId: Int, planId: Int): Flow<Response<OrderIdResponse>> =
         flow {
+            Log.e("params->","${userId} ${planId}")
             val response = api.generateOrderId(userId, planId).await()
             emit(response)
         }.flowOn(Dispatchers.IO)

@@ -1,5 +1,6 @@
 package com.tklpvtltd.ui.adapter
 
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -40,8 +41,10 @@ class RemarkAdapterAdapter : RecyclerView.Adapter<RemarkAdapterAdapter.WalletVie
     inner class WalletViewHolder(val binding: LayoutRemarkBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun setData(position: Int) {
-            binding.weview.loadData(remarkListing[position].name,"","");
-            binding.weview.settings.javaScriptEnabled = true
+            binding.weview.text = Html.fromHtml(Html.fromHtml(remarkListing[position].name,).toString());
+
+//            binding.weview.loadData(remarkListing[position].name,"","");
+//            binding.weview.settings.javaScriptEnabled = true
 
         }
 

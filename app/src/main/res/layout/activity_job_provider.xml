@@ -68,7 +68,7 @@ android:layout_height="match_parent">
                     android:id="@+id/owner_rB"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Owner" />
+                    android:text="Name" />
 
                 <RadioButton
                     android:id="@+id/represent_rB"

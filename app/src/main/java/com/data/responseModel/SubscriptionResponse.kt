@@ -60,7 +60,9 @@ data class OurPlan(
     @SerializedName("price")
     var price: String,
     @SerializedName("updated_at")
-    var updatedAt: String
+    var updatedAt: String,
+    @SerializedName("plan_expired_date")
+    var plan_expired_date:String
 )
 
 

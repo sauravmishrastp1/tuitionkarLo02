@@ -73,7 +73,7 @@ class SubscriptionFragment : Fragment() {
     fun observe(){
         mainViewModel.subscriptionResponse.observe(viewLifecycleOwner){
 
-            subscriptionAdapter.setData(it.body()!!.ourPlan as MutableList<OurPlan>)
+            subscriptionAdapter.setData(it.body()!!.ourPlan as MutableList<OurPlan>,it.body()!!.planExpiredDate.toString())
             binding.rvSuscribtion.adapter = subscriptionAdapter
         }
 

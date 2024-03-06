@@ -9,6 +9,7 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -16,16 +17,21 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.tklpvtltd.databinding.ActivityMainBinding
+import com.tklpvtltd.ui.ActivityJobDetails
+import com.tklpvtltd.ui.GoToSuscriptionPlac
 import com.tklpvtltd.utils.prefrence.SessionManager
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() ,GoToSuscriptionPlac{
 
+    private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        ActivityJobDetails.goToSuscriptionPlac = this
+
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -35,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
+         navController = findNavController(R.id.nav_host_fragment_content_main)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         appBarConfiguration = AppBarConfiguration(
@@ -128,5 +134,9 @@ class MainActivity : AppCompatActivity() {
         }
         alertDialog.show()
 
+    }
+
+    override fun goToFragment() {
+        navController.navigate(R.id.nav_slideshow)
     }
 }

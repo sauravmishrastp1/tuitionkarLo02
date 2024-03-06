@@ -94,6 +94,7 @@ class PaymentDetailsActivity : AppCompatActivity(), PaymentResultListener {
 
         ////////////////////////////////////////////////
         //paybutton!!.setOnClickListener(View.OnClickListener { startPayment() })
+       // Toast.makeText(applicationContext,intent.getIntExtra("planId",0).toString(),Toast.LENGTH_SHORT).show()
         mainViewModel.generateOrderId(SessionManager.getInstance(applicationContext).getUserId,intent.getIntExtra("planId",0))
         mainViewModel.orderIdResponse.observe(this){
             startPayment(it.body()!!.orderId,it.body()!!.amount)

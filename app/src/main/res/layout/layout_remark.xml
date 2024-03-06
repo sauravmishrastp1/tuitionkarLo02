@@ -13,10 +13,12 @@
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:layout_height="wrap_content">
-        <WebView
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:id="@+id/weview"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:layout_marginStart="10dp"
             android:layout_height="wrap_content"
             tools:ignore="WebViewLayout" />
@@ -25,6 +27,7 @@
             android:id="@+id/tvContent"
             android:textColor="@color/purple_200"
             android:textSize="18sp"
+            android:visibility="gone"
             android:textStyle="bold"
             android:layout_marginStart="10dp"
             android:layout_marginBottom="10dp"

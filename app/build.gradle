@@ -13,7 +13,7 @@ android {
         applicationId "com.tklpvtltd"
         minSdk 21
         targetSdk 33
-        versionCode 14
+        versionCode 21
         versionName "5.3"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -21,14 +21,14 @@ android {
 
     buildTypes {
         release {
-            buildConfigField("String", "BASE_URL", "https://tklpvtltd.com/api/")
+            buildConfigField("String", "BASE_URL", '"https://tklpvtltd.com/api/"')
 
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
 
         debug {
-            buildConfigField("String", "BASE_URL","https://tklpvtltd.com/api/")
+            buildConfigField("String", "BASE_URL",'"https://tklpvtltd.com/api/"')
 
             applicationIdSuffix ".debug"
             debuggable true

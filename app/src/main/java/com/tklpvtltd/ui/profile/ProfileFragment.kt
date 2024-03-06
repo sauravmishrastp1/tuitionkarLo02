@@ -1,14 +1,15 @@
 package com.tklpvtltd.ui.profile
 
 import android.Manifest
+import android.R
 import android.app.Activity
+import android.app.DatePickerDialog
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.net.Uri
-import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -17,7 +18,6 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
-import androidx.cardview.widget.CardView
 import androidx.core.content.ContextCompat
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
@@ -30,11 +30,8 @@ import com.github.dhaval2404.imagepicker.ImagePicker
 import com.tklpvtltd.*
 import com.tklpvtltd.databinding.FragmentProfileBinding
 import com.tklpvtltd.ui.profile.adapter.*
-import com.tklpvtltd.ui.remark.adapter.CustomAdapter
 import com.tklpvtltd.utils.TklFileUtils
 import com.tklpvtltd.utils.prefrence.SessionManager
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import retrofit2.Response
 import java.io.File
@@ -44,9 +41,6 @@ import java.io.InputStream
 import java.net.HttpURLConnection
 import java.net.URL
 import java.util.*
-import kotlin.collections.ArrayList
-import android.R
-import android.app.DatePickerDialog
 
 
 class ProfileFragment : Fragment() ,BaseInterface,GetLocation,UpdateProfile{
@@ -643,8 +637,10 @@ class ProfileFragment : Fragment() ,BaseInterface,GetLocation,UpdateProfile{
 
         val permissions = arrayOf(
             Manifest.permission.CAMERA,
+            Manifest.permission.CAMERA,
             Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_MEDIA_IMAGES,
         )
         for (permission in permissions) {
             if (ContextCompat.checkSelfPermission(
@@ -670,11 +666,11 @@ class ProfileFragment : Fragment() ,BaseInterface,GetLocation,UpdateProfile{
 
     }
     private fun cameraIntent() {
-        ImagePicker.with(this)
-            .crop(16F, 16F)
-            .compress(1024)
-            .maxResultSize(700, 700)
-            .start()
+
+        val intent: Intent = Intent()
+        intent.setType("image/*")
+        intent.setAction(Intent.ACTION_GET_CONTENT)
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), 1)
 
     }
 

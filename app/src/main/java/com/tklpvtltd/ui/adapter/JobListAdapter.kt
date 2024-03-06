@@ -38,7 +38,7 @@ class JobListAdapter(val callBack:CallBackJobList) : RecyclerView.Adapter<JobLis
         RecyclerView.ViewHolder(binding.root) {
             fun setData(position: Int){
                 binding.title.text = list[position].designation
-                binding.tvLocation.text = list[position].cityName.replace("[","").replace("]","")
+//                binding.tvLocation.text = list[position].cityName.replace("[","").replace("]","")
                 binding.tvSlary.text = "₹${list[position].salary}/Month"
                 Glide.with(binding.root.context).load("${IMAGE_BASE_URL}${list[position].logo}").placeholder(
                     R.drawable.tkllogo).circleCrop().into(binding.imgJobLogo)

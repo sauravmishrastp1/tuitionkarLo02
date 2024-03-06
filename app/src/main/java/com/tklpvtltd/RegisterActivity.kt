@@ -514,11 +514,17 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun cameraIntent() {
-        ImagePicker.with(this)
-            .crop(16F, 16F)
-            .compress(1024)
-            .maxResultSize(700, 700)
-            .start()
+//        ImagePicker.with(this)
+//            .crop(16F, 16F)
+//            .compress(1024)
+//            .maxResultSize(700, 700)
+//            .start()
+
+        val intent: Intent = Intent()
+        intent.setType("image/*")
+        intent.setAction(Intent.ACTION_GET_CONTENT)
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), 1)
+
 
     }
 
@@ -610,7 +616,9 @@ class RegisterActivity : AppCompatActivity() {
         val permissions = arrayOf(
             Manifest.permission.CAMERA,
             Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_MEDIA_IMAGES,
+
         )
         for (permission in permissions) {
             if (ContextCompat.checkSelfPermission(
