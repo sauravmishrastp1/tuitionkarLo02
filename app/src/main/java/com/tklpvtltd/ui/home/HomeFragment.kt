@@ -20,7 +20,7 @@ import com.data.responseModel.AppliedJobsResponse
 import com.data.responseModel.JobList
 import com.data.responseModel.SliderData
 import com.github.dhaval2404.imagepicker.ImagePicker
-import com.smarteist.autoimageslider.SliderView
+//import com.smarteist.autoimageslider.SliderView
 import com.tklpvtltd.MainViewModel
 import com.tklpvtltd.R
 import com.tklpvtltd.RegisterActivity
@@ -29,7 +29,7 @@ import com.tklpvtltd.ui.ActivityJobDetails
 import com.tklpvtltd.ui.CareerAtTklRegisterActivity
 import com.tklpvtltd.ui.JobProviderRegisterActivity
 import com.tklpvtltd.ui.adapter.JobListAdapter
-import com.tklpvtltd.ui.adapter.SliderAdapter
+//import com.tklpvtltd.ui.adapter.SliderAdapter
 import com.tklpvtltd.utils.prefrence.SessionManager
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -110,7 +110,10 @@ class HomeFragment : Fragment() {
         appliedJobList.clear()
 
         mainViewModel.appliedJobsResponse.observe(viewLifecycleOwner){
-            appliedJobList.addAll(it.body()!!.data.jobList)
+            if(it.body()!=null){
+                appliedJobList.addAll(it.body()!!.data.jobList)
+
+            }
         }
         binding.progressBar.visibility=View.VISIBLE
         jobList.clear()
@@ -176,40 +179,40 @@ class HomeFragment : Fragment() {
         // passing this array list inside our adapter class.
 
         // passing this array list inside our adapter class.
-        val adapter = SliderAdapter(requireContext(), sliderDataArrayList)
+//        val adapter = SliderAdapter(requireContext(), sliderDataArrayList)
 
         // below method is used to set auto cycle direction in left to
         // right direction you can change according to requirement.
 
         // below method is used to set auto cycle direction in left to
         // right direction you can change according to requirement.
-        binding.slider.autoCycleDirection = SliderView.LAYOUT_DIRECTION_LTR
+//        binding.slider.autoCycleDirection = SliderView.LAYOUT_DIRECTION_LTR
 
         // below method is used to
         // setadapter to sliderview.
 
         // below method is used to
         // setadapter to sliderview.
-        binding.slider.setSliderAdapter(adapter)
-
-        // below method is use to set
-        // scroll time in seconds.
-
-        // below method is use to set
-        // scroll time in seconds.
-        binding.slider.scrollTimeInSec = 3
-
-        // to set it scrollable automatically
-        // we use below method.
-
-        // to set it scrollable automatically
-        // we use below method.
-        binding.slider.isAutoCycle = true
-
-        // to start autocycle below method is used.
-
-        // to start autocycle below method is used.
-        binding.slider.startAutoCycle()
+//        binding.slider.setSliderAdapter(adapter)
+//
+//        // below method is use to set
+//        // scroll time in seconds.
+//
+//        // below method is use to set
+//        // scroll time in seconds.
+//        binding.slider.scrollTimeInSec = 3
+//
+//        // to set it scrollable automatically
+//        // we use below method.
+//
+//        // to set it scrollable automatically
+//        // we use below method.
+//        binding.slider.isAutoCycle = true
+//
+//        // to start autocycle below method is used.
+//
+//        // to start autocycle below method is used.
+//        binding.slider.startAutoCycle()
 
     }
 

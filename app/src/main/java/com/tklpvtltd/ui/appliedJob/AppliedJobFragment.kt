@@ -18,7 +18,6 @@ import com.tklpvtltd.ui.ActivityJobDetails
 import com.tklpvtltd.ui.adapter.JobListAdapter
 import com.tklpvtltd.utils.prefrence.SessionManager
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.component.KoinApiExtension
 
 class AppliedJobFragment : Fragment() {
 

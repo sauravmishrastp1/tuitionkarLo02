@@ -1,5 +1,4 @@
 package com.koin
-
 import com.data.remote.baseApi.Api
 import com.data.remote.baseApi.Repository
 import com.google.gson.FieldNamingPolicy

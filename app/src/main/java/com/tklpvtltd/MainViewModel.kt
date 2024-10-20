@@ -12,11 +12,9 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import okhttp3.ResponseBody
-import org.koin.core.component.KoinApiExtension
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
-@KoinApiExtension
 class MainViewModel : ViewModel(), KoinComponent {
     private val repository: Repository by inject()
     var response: MutableLiveData<retrofit2.Response<JobDetailsResponse>> = MutableLiveData()

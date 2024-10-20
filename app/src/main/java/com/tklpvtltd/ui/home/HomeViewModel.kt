@@ -9,11 +9,9 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
-import org.koin.core.component.KoinApiExtension
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 
-@KoinApiExtension
 class HomeViewModel : ViewModel(), KoinComponent {
     private val repository: Repository by inject()
     var jobListResponse :MutableLiveData<retrofit2.Response<JobListResponse>> = MutableLiveData()

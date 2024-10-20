@@ -17,7 +17,6 @@ import com.tklpvtltd.ui.PaymentDetailsActivity
 import com.tklpvtltd.ui.adapter.SubscriptionAdapter
 import com.tklpvtltd.utils.prefrence.SessionManager
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import org.koin.core.component.KoinApiExtension
 
 class SubscriptionFragment : Fragment() {
 
@@ -28,7 +27,6 @@ class SubscriptionFragment : Fragment() {
     private lateinit var subscriptionAdapter: SubscriptionAdapter
 
 
-    @OptIn(KoinApiExtension::class)
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -62,14 +60,12 @@ class SubscriptionFragment : Fragment() {
         return root
     }
 
-    @OptIn(KoinApiExtension::class)
     override fun onResume() {
         super.onResume()
         mainViewModel.getUserSuscribtionPlan(SessionManager.getInstance(requireContext()).getUserId)
         observe()
 
     }
-    @OptIn(KoinApiExtension::class)
     fun observe(){
         mainViewModel.subscriptionResponse.observe(viewLifecycleOwner){
 

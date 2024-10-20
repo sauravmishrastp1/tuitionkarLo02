@@ -593,11 +593,15 @@ class RegisterActivity : AppCompatActivity() {
             val jsonObject :JsonObject? = Gson().fromJson(responseBodyString, JsonObject::class.java)
             if (jsonObject != null) {
                 val value = jsonObject.get("status").asInt
+                val msg = jsonObject.get("msg").asString
 
                 if (value == 201) {
                     showAlertRegisterSucess("Already Registered", "Error")
 
-                } else {
+                } else if(value==203) {
+                    showAlertRegisterSucess("${msg}", "Format error")
+
+                }else if(value==200){
                     showAlertRegisterSucess("Register successfully", "Success")
 
                 }
