@@ -82,6 +82,7 @@ class ActivityJobDetails : AppCompatActivity() {
             }catch (e:Exception){
 
             }
+
             binding.jobLocDetail.settings.javaScriptEnabled = true
            // binding.jobDescDetail.text = Html.fromHtml(Html.fromHtml(it.body()!!.jobDetail.description).toString())
 //            binding.jobExpDetail.text = Html.fromHtml(Html.fromHtml(it.body()!!.jobDetail.requirement).toString())
