@@ -10,5 +10,8 @@ data class OrderIdResponse(
     @SerializedName("order_id")
     var orderId: String,
     @SerializedName("status")
-    var status: Int
+    var status: Int,
+    @SerializedName("payment_url")
+    var paymentUrl :String
 )
+

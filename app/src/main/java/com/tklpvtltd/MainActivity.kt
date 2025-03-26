@@ -19,6 +19,8 @@ import com.google.android.material.navigation.NavigationView
 import com.tklpvtltd.databinding.ActivityMainBinding
 import com.tklpvtltd.ui.ActivityJobDetails
 import com.tklpvtltd.ui.GoToSuscriptionPlac
+import com.tklpvtltd.ui.PrivacyPloicyActivity
+import com.tklpvtltd.ui.RefundPloicyActivity
 import com.tklpvtltd.utils.prefrence.SessionManager
 
 
@@ -58,6 +60,24 @@ class MainActivity : AppCompatActivity() ,GoToSuscriptionPlac{
 
                 showAlert("Are you sure want to logout?","Logout")
               return true
+            }
+
+        })
+
+        nav_Menu.findItem(R.id.nav_rp).setOnMenuItemClickListener(object :OnMenuItemClickListener{
+            override fun onMenuItemClick(item: MenuItem): Boolean {
+                startActivity(Intent(applicationContext, RefundPloicyActivity::class.java))
+                return true
+
+            }
+
+        })
+
+        nav_Menu.findItem(R.id.nav_privacy).setOnMenuItemClickListener(object :OnMenuItemClickListener{
+            override fun onMenuItemClick(item: MenuItem): Boolean {
+                startActivity(Intent(applicationContext, PrivacyPloicyActivity::class.java))
+                return true
+
             }
 
         })

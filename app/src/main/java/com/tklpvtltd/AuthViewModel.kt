@@ -11,12 +11,10 @@ import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import okhttp3.ResponseBody
-import org.koin.core.component.KoinApiExtension
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
 import java.io.File
 
-@KoinApiExtension
 class AuthViewModel :ViewModel(), KoinComponent {
    private val repository: Repository by inject()
     var loginResponse :MutableLiveData<retrofit2.Response<LoginResponse>> = MutableLiveData()

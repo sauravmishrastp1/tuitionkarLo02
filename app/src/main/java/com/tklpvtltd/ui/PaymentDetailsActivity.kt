@@ -15,8 +15,12 @@ import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.Toolbar
 import com.data.responseModel.OrderIdResponse
+import com.phonepe.intent.sdk.api.PhonePeKt
+import com.phonepe.intent.sdk.api.models.PhonePeEnvironment
 import com.tklpvtltd.MainActivity
 import com.tklpvtltd.MainViewModel
 import com.tklpvtltd.utils.prefrence.SessionManager
@@ -49,6 +53,7 @@ class PaymentDetailsActivity : AppCompatActivity(), PaymentResultListener {
     var ourAmount: String? = null
     var myAmount = 0
     var orderId=""
+    var phonePeOderId=""
     private val mainViewModel by viewModel<MainViewModel>()
 
 
@@ -97,8 +102,10 @@ class PaymentDetailsActivity : AppCompatActivity(), PaymentResultListener {
        // Toast.makeText(applicationContext,intent.getIntExtra("planId",0).toString(),Toast.LENGTH_SHORT).show()
         mainViewModel.generateOrderId(SessionManager.getInstance(applicationContext).getUserId,intent.getIntExtra("planId",0))
         mainViewModel.orderIdResponse.observe(this){
-            startPayment(it.body()!!.orderId,it.body()!!.amount)
-            orderId= it.body()!!.orderId
+//            startPayment(it.body()!!.orderId,it.body()!!.amount)
+//            orderId= it.body()!!.orderId
+            Log.i("Payment_url", it.body().toString())
+            phonePeIntegration(it.body()!!.paymentUrl,it.body()!!.orderId)
         }
 
     }
@@ -141,7 +148,7 @@ class PaymentDetailsActivity : AppCompatActivity(), PaymentResultListener {
              * eg: ACME Corp || HasGeek etc.
              */
             options.put("name", "TKL Consultancy (OPC) Pvt Ltd")
-            options.put("description", "test")
+            options.put("description", "Payment")
             options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.jpg")
             options.put("theme.color", "#3399cc")
             options.put("currency", "INR")
@@ -179,6 +186,47 @@ class PaymentDetailsActivity : AppCompatActivity(), PaymentResultListener {
         })
 
     }
+    private fun phonePeIntegration(token:String,orderId: String){
+        val result = PhonePeKt.init(
+            context = this,
+            merchantId = "TLKCONONLINE",
+            flowId = SessionManager.getInstance(applicationContext).getUserId.toString(),
+            phonePeEnvironment = PhonePeEnvironment.RELEASE,
+            enableLogging = false,
+            appId = "a06aa502-418d-4f36-9a12-8879506b8da3"
+        )
+        phonePeOderId = orderId
+        if(result){
 
+            try{
+                PhonePeKt.startCheckoutPage(
+                    context = this,
+                    token = token,
+                    orderId = orderId,
+                    activityResultLauncher = activityResultLauncher
+                )
+            } catch(ex: Exception){
+                Log.e("PhonePe Exception",ex.message.toString());
+                // Transaction could not be started.
+                // Either re-init the SDK and call startCheckoutPage again or use other ways to complete your transaction.
+            }
+        }
+        else {
+            Log.e("Reslut",result.toString());
+
+            // Some error occurred in SDK. Report it to PhonePe Integration team.
+            // NOTE: SDK is not in the state to use. Hence, no other method should be called.
+        }
+
+    }
+
+
+    private val activityResultLauncher: ActivityResultLauncher<Intent> = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) {
+
+        mainViewModel.storePaymentDeatils(SessionManager.getInstance(applicationContext).getUserId,"",phonePeOderId)
+
+    }
 
 }

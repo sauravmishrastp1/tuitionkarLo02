@@ -107,7 +107,7 @@ interface Api {
     @POST("generate-order-id")
     fun generateOrderId(
         @Field("user_id") user_id: Int,
-        @Field("plan_id") plan_id: Int
+        @Field("id") plan_id: Int
     ): Deferred<retrofit2.Response<OrderIdResponse>>
 
     @FormUrlEncoded

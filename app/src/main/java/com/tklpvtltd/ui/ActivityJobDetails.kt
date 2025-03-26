@@ -125,10 +125,13 @@ class ActivityJobDetails : AppCompatActivity() {
         alertDialog.setButton(
             AlertDialog.BUTTON_POSITIVE, "OK"
         ) { dialog, which ->
-            startActivity(Intent(this,MainActivity::class.java).let {
-                it.putExtra("type","Paytment")
-            })
-            finish()
+            if(!title.equals("Success")){
+                startActivity(Intent(this,MainActivity::class.java).let {
+                    it.putExtra("type","Paytment")
+                })
+                finish()
+            }
+
 
 //            goToSuscriptionPlac!!.goToFragment()
 

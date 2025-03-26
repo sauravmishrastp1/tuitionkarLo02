@@ -10,10 +10,12 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:id="@+id/layoutOption"
+        android:background="@color/white"
         android:layout_height="wrap_content">
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:id="@+id/cvLogin"
+            app:cardBackgroundColor="@color/white"
             android:layout_weight="1"
             android:layout_margin="10dp"
 
@@ -21,6 +23,7 @@
             <androidx.appcompat.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:text="Login"
+                android:textColor="@color/black"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="center"
@@ -126,320 +129,377 @@
 
                 </RelativeLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
                     android:layout_margin="16dp"
-                    android:paddingStart="6dp"
-                    android:theme="@style/TextLabel">
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginTop="50dp"
+                    app:strokeColor="@color/bg_gray"
+                    app:strokeWidth="1dp"
+                    app:cardBackgroundColor="@color/white">
 
                     <EditText
                         android:id="@+id/fullName"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:hint="Name"
+                        android:textColorHint="@color/dark_grey"
+                        android:paddingStart="20dp"
+                        android:background="@null"
                         android:inputType="textEmailAddress"
                         android:textColor="@color/dark_grey"
                         android:textSize="@dimen/main_sub_header" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.card.MaterialCardView>>
 
 
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
-                    android:layout_margin="16dp"
-                    android:paddingStart="6dp"
-                    android:theme="@style/TextLabel">
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    app:cardCornerRadius="10dp"
+                    app:strokeColor="@color/bg_gray"
+                    app:strokeWidth="1dp"
+                    app:cardBackgroundColor="@color/white">
 
                     <EditText
                         android:id="@+id/emailRegister"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:hint="Email Address"
+                        android:paddingStart="20dp"
+                        android:textColorHint="@color/dark_grey"
+                        android:background="@null"
                         android:inputType="textEmailAddress"
                         android:textColor="@color/dark_grey"
                         android:textSize="@dimen/main_sub_header" />
 
-                </com.google.android.material.textfield.TextInputLayout>
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                </com.google.android.material.card.MaterialCardView>>
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="16dp"
-                    android:layout_margin="16dp"
                     android:layout_marginRight="16dp"
-                    android:paddingStart="6dp"
-                    android:theme="@style/TextLabel">
+                    app:cardCornerRadius="10dp"
+                    app:strokeColor="@color/bg_gray"
+                    app:strokeWidth="1dp"
+                    app:cardBackgroundColor="@color/white">
 
                     <EditText
                         android:id="@+id/phoneNumber"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:background="@null"
+                        android:paddingStart="20dp"
+                        android:textColorHint="@color/dark_grey"
                         android:hint="Phone Number"
                         android:inputType="phone"
                         android:maxLength="10"
                         android:textColor="@color/dark_grey"
                         android:textSize="@dimen/main_sub_header" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.card.MaterialCardView>>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="16dp"
-                    android:layout_margin="16dp"
                     android:layout_marginRight="16dp"
-                    android:paddingStart="6dp"
-                    android:theme="@style/TextLabel">
+                    app:cardCornerRadius="10dp"
+                    app:strokeColor="@color/bg_gray"
+                    app:strokeWidth="1dp"
+                    app:cardBackgroundColor="@color/white">
 
                     <EditText
                         android:id="@+id/whatsappNo"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:hint="Whatsapp No."
+                        android:textColorHint="@color/dark_grey"
                         android:inputType="phone"
+                        android:paddingStart="20dp"
+                        android:background="@null"
                         android:maxLength="10"
                         android:textColor="@color/dark_grey"
                         android:textSize="@dimen/main_sub_header" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.card.MaterialCardView>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
-                    android:id="@+id/dobLayout"
                     android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="16dp"
-                    android:layout_margin="16dp"
                     android:layout_marginRight="16dp"
-                    android:paddingStart="6dp"
-                    android:theme="@style/TextLabel">
+                    app:cardCornerRadius="10dp"
+                    app:strokeColor="@color/bg_gray"
+                    app:strokeWidth="1dp"
+                    app:cardBackgroundColor="@color/white">
 
                     <EditText
                         android:id="@+id/passwordRegister"
                         android:layout_width="match_parent"
+                        android:background="@null"
+                        android:paddingStart="20dp"
                         android:layout_height="match_parent"
                         android:hint="Date of Birth"
+                        android:textColorHint="@color/dark_grey"
                         android:focusable="false"
                         android:clickable="false"
                         android:textColor="@color/dark_grey"
                         android:textSize="@dimen/main_sub_header" />
 
-                </com.google.android.material.textfield.TextInputLayout>
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                </com.google.android.material.card.MaterialCardView>>
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="16dp"
-                    android:layout_margin="16dp"
                     android:layout_marginRight="16dp"
-                    android:paddingStart="6dp"
-                    android:theme="@style/TextLabel">
+                    app:cardCornerRadius="10dp"
+                    app:strokeColor="@color/bg_gray"
+                    app:strokeWidth="1dp"
+                    app:cardBackgroundColor="@color/white">
 
                     <EditText
                         android:id="@+id/industryType"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:hint="Industry"
+                        android:paddingStart="20dp"
+                        android:background="@null"
+                        android:textColorHint="@color/dark_grey"
                         android:textColor="@color/dark_grey"
                         android:textSize="@dimen/main_sub_header" />
 
-                </com.google.android.material.textfield.TextInputLayout>
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                </com.google.android.material.card.MaterialCardView>>
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="16dp"
-                    android:layout_margin="16dp"
                     android:layout_marginRight="16dp"
-                    android:paddingStart="6dp"
-                    android:theme="@style/TextLabel">
+                    app:cardCornerRadius="10dp"
+                    app:strokeColor="@color/bg_gray"
+                    app:strokeWidth="1dp"
+                    app:cardBackgroundColor="@color/white">
 
                     <EditText
                         android:id="@+id/jobTitle"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:hint="Job Role ( Designation)"
+                        android:background="@null"
+                        android:paddingStart="20dp"
+                        android:textColorHint="@color/dark_grey"
                         android:textColor="@color/dark_grey"
                         android:textSize="@dimen/main_sub_header" />
 
-                </com.google.android.material.textfield.TextInputLayout>
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                </com.google.android.material.card.MaterialCardView>>
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
                     android:layout_marginLeft="16dp"
-                    android:layout_margin="16dp"
                     android:layout_marginRight="16dp"
-                    android:paddingStart="6dp"
-                    android:theme="@style/TextLabel">
+                    app:cardCornerRadius="10dp"
+                    app:strokeColor="@color/bg_gray"
+                    app:strokeWidth="1dp"
+                    app:cardBackgroundColor="@color/white">
 
                     <androidx.appcompat.widget.AppCompatAutoCompleteTextView
                         android:id="@+id/totalExperience"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:textColorHint="@color/dark_grey"
                         android:hint="Total Experience"
-                        android:paddingStart="10dp"
+                        android:paddingStart="20dp"
                         android:inputType="number"
+                        android:background="@null"
                         android:drawableEnd="@drawable/baseline_arrow_drop_down_24"
                         android:textColor="@color/dark_grey"
                         android:textSize="@dimen/main_sub_header" />
 
-                </com.google.android.material.textfield.TextInputLayout>
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                </com.google.android.material.card.MaterialCardView>>
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
                     android:layout_marginLeft="16dp"
-                    android:layout_margin="16dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginRight="16dp"
-                    android:paddingStart="6dp"
-                    android:theme="@style/TextLabel">
+                    app:cardCornerRadius="10dp"
+                    app:strokeColor="@color/bg_gray"
+                    app:strokeWidth="1dp"
+                    app:cardBackgroundColor="@color/white">
 
                     <EditText
                         android:id="@+id/highestQualification"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:paddingStart="20dp"
+                        android:background="@null"
+                        android:textColorHint="@color/dark_grey"
                         android:hint="Highest Qualification"
                         android:textColor="@color/dark_grey"
                         android:textSize="@dimen/main_sub_header" />
 
-                </com.google.android.material.textfield.TextInputLayout>
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                </com.google.android.material.card.MaterialCardView>>
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
                     android:layout_marginLeft="16dp"
-                    android:layout_margin="16dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginRight="16dp"
-                    android:paddingStart="6dp"
-                    android:theme="@style/TextLabel">
+                    app:cardCornerRadius="10dp"
+                    app:strokeColor="@color/bg_gray"
+                    app:strokeWidth="1dp"
+                    app:cardBackgroundColor="@color/white">
 
                     <androidx.appcompat.widget.AppCompatAutoCompleteTextView
                         android:id="@+id/currentSalaryMonth"
                         android:layout_width="match_parent"
-                        android:padding="10dp"
+                        android:paddingStart="20dp"
+                        android:background="@null"
+                        android:textColorHint="@color/dark_grey"
                         android:drawableEnd="@drawable/baseline_arrow_drop_down_24"
                         android:layout_height="match_parent"
                         android:hint=" Current Salary/Month"
                         android:textColor="@color/dark_grey"
                         android:textSize="@dimen/main_sub_header" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.card.MaterialCardView>>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="16dp"
-                    android:layout_margin="16dp"
                     android:layout_marginRight="16dp"
-                    android:paddingStart="6dp"
-                    android:theme="@style/TextLabel">
+                    app:cardCornerRadius="10dp"
+                    app:strokeColor="@color/bg_gray"
+                    app:strokeWidth="1dp"
+                    app:cardBackgroundColor="@color/white">
 
                     <androidx.appcompat.widget.AppCompatAutoCompleteTextView
                         android:id="@+id/Country"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:hint="Country"
+                        android:background="@null"
+                        android:textColorHint="@color/dark_grey"
                         android:drawableEnd="@drawable/baseline_arrow_drop_down_24"
-                        android:paddingStart="10dp"
+                        android:paddingStart="20dp"
                         android:inputType="textEmailAddress"
                         android:textColor="@color/dark_grey"
                         android:textSize="@dimen/main_sub_header" />
 
-                </com.google.android.material.textfield.TextInputLayout>
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                </com.google.android.material.card.MaterialCardView>>
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="16dp"
-                    android:layout_margin="16dp"
                     android:layout_marginRight="16dp"
-                    android:paddingStart="6dp"
-                    android:theme="@style/TextLabel">
+                    app:cardCornerRadius="10dp"
+                    app:strokeColor="@color/bg_gray"
+                    app:strokeWidth="1dp"
+                    app:cardBackgroundColor="@color/white">
 
                     <androidx.appcompat.widget.AppCompatAutoCompleteTextView
                         android:id="@+id/state"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:hint="State"
+                        android:background="@null"
+                        android:textColorHint="@color/dark_grey"
                         android:drawableEnd="@drawable/baseline_arrow_drop_down_24"
-                        android:paddingStart="10dp"
+                        android:paddingStart="20dp"
                         android:inputType="textEmailAddress"
                         android:textColor="@color/dark_grey"
                         android:textSize="@dimen/main_sub_header" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.card.MaterialCardView>>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="16dp"
-                    android:layout_margin="16dp"
                     android:layout_marginRight="16dp"
-                    android:paddingStart="6dp"
-                    android:theme="@style/TextLabel">
+                    app:cardCornerRadius="10dp"
+                    app:strokeColor="@color/bg_gray"
+                    app:strokeWidth="1dp"
+                    app:cardBackgroundColor="@color/white">
 
                     <androidx.appcompat.widget.AppCompatAutoCompleteTextView
                         android:id="@+id/city"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:hint="City"
+
+                        android:background="@null"
+                        android:textColorHint="@color/dark_grey"
                         android:drawableEnd="@drawable/baseline_arrow_drop_down_24"
-                        android:paddingStart="10dp"
+                        android:paddingStart="20dp"
                         android:inputType="textEmailAddress"
                         android:textColor="@color/dark_grey"
                         android:textSize="@dimen/main_sub_header" />
 
-                </com.google.android.material.textfield.TextInputLayout>
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                </com.google.android.material.card.MaterialCardView>>
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="16dp"
-                    android:layout_margin="16dp"
                     android:layout_marginRight="16dp"
-                    android:paddingStart="6dp"
-                    android:theme="@style/TextLabel">
+                    app:cardCornerRadius="10dp"
+                    app:strokeColor="@color/bg_gray"
+                    app:strokeWidth="1dp"
+                    app:cardBackgroundColor="@color/white">
 
                     <EditText
                         android:id="@+id/cityOther"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:hint="Other City"
-                        android:paddingStart="10dp"
+                        android:textColorHint="@color/dark_grey"
+                        android:paddingStart="20dp"
+                        android:background="@null"
                         android:inputType="textEmailAddress"
                         android:textColor="@color/dark_grey"
                         android:textSize="@dimen/main_sub_header" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.card.MaterialCardView>>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
-                    android:layout_margin="16dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
-                    android:paddingStart="6dp"
-                    android:theme="@style/TextLabel">
+                    app:cardCornerRadius="10dp"
+                    app:strokeColor="@color/bg_gray"
+                    app:strokeWidth="1dp"
+                    app:cardBackgroundColor="@color/white">
 
                     <EditText
                         android:id="@+id/completeAddress"
                         android:layout_width="match_parent"
+                        android:background="@null"
+                        android:paddingStart="20dp"
                         android:layout_height="match_parent"
                         android:hint="Complete Address"
+                        android:textColorHint="@color/dark_grey"
                         android:textColor="@color/dark_grey"
                         android:textSize="@dimen/main_sub_header" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.card.MaterialCardView>>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -458,6 +518,7 @@
                             android:layout_width="match_parent"
                             app:cardCornerRadius="10dp"
                             android:layout_margin="10dp"
+                            app:cardBackgroundColor="@color/white"
                             android:layout_marginBottom="10dp"
                             android:layout_height="100dp">
                             <androidx.appcompat.widget.AppCompatImageView
@@ -491,6 +552,7 @@
                             android:layout_width="match_parent"
                             app:cardCornerRadius="10dp"
                             android:layout_margin="10dp"
+                            app:cardBackgroundColor="@color/white"
                             android:layout_marginBottom="10dp"
                             android:layout_height="100dp">
                             <androidx.appcompat.widget.AppCompatImageView
@@ -565,6 +627,7 @@
                         android:id="@+id/checkBox_jobForm"
                         android:layout_width="wrap_content"
                         android:layout_height="30dp"
+                        android:textColor="@color/black"
                         android:buttonTint="@color/colorPrimary"
                         android:text="I've read &amp; agreed to" />
 
